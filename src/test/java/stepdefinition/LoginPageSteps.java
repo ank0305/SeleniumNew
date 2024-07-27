@@ -32,7 +32,7 @@ private LoginPage loginPage;
     public void openzCartwebsite() {
     driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
     loginPage = new LoginPage(driver);
-
+//test
 
 }
 

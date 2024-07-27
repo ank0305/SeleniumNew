@@ -61,7 +61,7 @@ private LoginPage loginPage;
 
     @Then("I should see an error message indicating {string}")
     public void i_should_see_an_error_message_indicating(String errorMessage) {
-        // Assert that an error message is displayed on the page matching the expected error message
+        // Assert that an error message is displayed on the page matching the expected error messages
         Assert.assertTrue(driver.findElement(By.cssSelector(".alert-danger")).isDisplayed());
     }
 

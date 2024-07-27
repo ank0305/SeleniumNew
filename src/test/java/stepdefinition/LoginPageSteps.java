@@ -6,6 +6,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -52,4 +53,20 @@ private LoginPage loginPage;
     Assert.assertTrue(loginPage.checklogoutLink());
 }
 
+    @Given("I have entered invalid {string} and {string}")
+    public void i_have_entered_invalid_and(String username, String password) {
+        loginPage.enterEmail(username);
+        loginPage.enterPassword(password);
+    }
+
+    @Then("I should see an error message indicating {string}")
+    public void i_should_see_an_error_message_indicating(String errorMessage) {
+        // Assert that an error message is displayed on the page matching the expected error message
+        Assert.assertTrue(driver.findElement(By.cssSelector(".alert-danger")).isDisplayed());
+    }
+
+    @When("I click on the login button")
+    public void iClickOnTheLoginButton() {
+        loginPage.loginBtn();
+    }
 }

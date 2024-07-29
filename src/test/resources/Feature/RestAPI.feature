@@ -1,6 +1,6 @@
 Feature: To validate API response using RESTASSURED
 
-Scenario Outline: Test Rest API
+Scenario Outline: Test Rest API (TC-04)
 
 
     Given when user pings the base URL

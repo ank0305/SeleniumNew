@@ -4,13 +4,13 @@ Background:
   Given I am on the Opencart Website
 
 
-  Scenario: Successful Login to Opencart Website
+  Scenario: Successful Login to Opencart Website(TC-01)
 
     Given I have entered valid username and password
     When I click on login button
     Then I should be able to login successfully
 
-  Scenario Outline: Unsuccessful login with invalid or empty credentials
+  Scenario Outline: Unsuccessful login with invalid or empty credentials(TC-02)
     Given I have entered invalid "<username>" and "<password>"
     When I click on the login button
     Then I should see an error message indicating "<error_message>"
